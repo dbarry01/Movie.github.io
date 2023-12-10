@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set metadata of the document -->
+    <!-- Used Sectioning Grouping and text-level element in all Html files.-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviesRUs - Home</title>
+    <!-- This is the CSS Links-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="homepage-title">MoviesRUs</h1>
+            <section>
+                <p class="homepage-subtitle">Your go-to place for Halloween-themed movies and more.</p>
+            </section>
+            <h2 class="homepage">Welcome to MoviesRUs</h2>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div id="countdownDisplay"></div>
+        </div>
+    </header>
+
+</body>
+
+<body>
+    <!-- Point 1: Create and format a form with multiple field sets -->
+    <h1>Suggest a Scary Movie</h1>
+
+    <!-- Fieldset 1 -->
+    <!-- Form Creation -->
+    <form id="movieForm" onsubmit="return validateForm()">
+        <fieldset>
+            <legend>Your Information</legend>
+
+            <!-- Point 2: Include input types: text, date/time, radio buttons, spinners, range sliders, and checkboxes -->
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required pattern="[a-zA-Z\s]+" title="Only letters and spaces are allowed"><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br>
+        </fieldset>
+
+        <!-- Fieldset 2 -->
+        <fieldset>
+            <legend>Movie Details</legend>
+
+            <!-- Point 2: (continued) -->
+            <label for="movieTitle">Movie Title:</label>
+            <input type="text" id="movieTitle" name="movieTitle" required list="movieTitles"><br>
+            <!-- Datalist Used for Input-->
+            <datalist id="movieTitles">
+                <option value="The Exorcist">
+                <option value="Hereditary">
+                <option value="The Shining">
+                <option value="The Texas Chainsaw Massacre">
+                <option value="The Ring">
+                <option value="Halloween">
+                <option value="Sinister">
+                <option value="Insidious">
+            </datalist>
+
+            <label for="releaseDate">Release Date:</label>
+            <input type="date" id="releaseDate" name="releaseDate"><br>
+
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" min="1" max="10" step="0.1"><br>
+
+            <!-- Point 2: (continued) -->
+            <label>Recommended:</label>
+            <input type="radio" id="recommendedYes" name="recommended" value="yes"> Yes
+            <input type="radio" id="recommendedNo" name="recommended" value="no"> No<br>
+
+            <!-- Point 2: (continued) -->
+            <label for="comment">Additional Comments:</label>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+        </fieldset>
+
+        <!-- Point 4: Create a selection list -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+        </select><br>
+
+        <!-- Point 7: Include at least one input that is set for a mobile keyboard type -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit">Submit</button>
+        <!-- Point 9: Create a cancel/reset button -->
+        <button type="reset">Clear</button>
+    </form>
+
+</body>
+</html>
